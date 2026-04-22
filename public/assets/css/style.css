@@ -1,0 +1,152 @@
+/* 🌐 GLOBAL */
+body {
+    min-height: 100vh;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+/* 🌞 Light Mode */
+body:not(.dark-mode) {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #000;
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+}
+
+/* 🔥 PAGE TRANSITION */
+body.fade-out {
+    opacity: 0;
+}
+
+/* 🧊 GLASS CONTAINER */
+.glass-container,
+.glass-card {
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+/* Light glass */
+body:not(.dark-mode) .glass-container,
+body:not(.dark-mode) .glass-card {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Dark glass */
+body.dark-mode .glass-container,
+body.dark-mode .glass-card {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* 🧾 INPUTS */
+.glass-card input,
+.glass-container input {
+    border: none;
+    color: #fff;
+}
+
+/* Light input */
+body:not(.dark-mode) input {
+    background: rgba(255,255,255,0.3);
+    color: #000;
+}
+
+/* Dark input */
+body.dark-mode input {
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: 1px solid #555;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+input:focus {
+    box-shadow: 0 0 10px rgba(0,123,255,0.6);
+}
+
+/* 🔘 BUTTONS */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* Special glass button */
+.glass-btn {
+    background: #4facfe;
+    border: none;
+    color: #fff;
+}
+
+.glass-btn:hover {
+    background: #00f2fe;
+}
+
+/* 📊 TABLE */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table tbody tr {
+    transition: 0.2s;
+}
+
+.table tbody tr:hover {
+    background: rgba(255,255,255,0.08);
+    transform: scale(1.01);
+}
+
+/* Dark table */
+body.dark-mode .table {
+    color: #fff;
+}
+
+/* ✨ FADE-IN PAGE */
+.page {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: pageEnter 0.5s ease forwards;
+}
+
+@keyframes pageEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔐 LOGIN ICON FLOAT */
+.login-icon {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 15px;
+    animation: float 2s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* 👁 PASSWORD TOGGLE */
+#togglePassword {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Fix visibility in light mode */
+body:not(.dark-mode) #togglePassword {
+    color: #000;
+}
