@@ -31,7 +31,9 @@ student-system/
 │
 ├── public/
 │ ├── index.php
-│ ├── assets/css/style.css
+│ └── assets/
+│ └── css/
+│ └── style.css
 │
 ├── routes/
 │ └── web.php
@@ -45,13 +47,12 @@ student-system/
 │ ├── models/
 │ │ ├── User.php
 │ │ └── Student.php
-│ ├── views/
-│ │ ├── auth/
-│ │ ├── layouts/
-│ │ └── student/
+│ └── views/
+│ ├── auth/
+│ ├── layouts/
+│ └── student/
 │
 └── README.md
-
 
 ---
 
