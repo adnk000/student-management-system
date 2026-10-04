@@ -9,6 +9,7 @@
         <h4 class="text-center mb-3">Welcome Back</h4>
 
         <form action="index.php?action=doLogin" method="POST">
+            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
             <input class="form-control mb-2" type="text" name="username" placeholder="Username" required>
 
             <div class="position-relative">

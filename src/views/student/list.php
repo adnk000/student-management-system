@@ -53,15 +53,20 @@
 const input = document.getElementById("searchInput");
 const tableBody = document.getElementById("tableBody");
 
-input.addEventListener("keyup", () => {
-    tableBody.style.opacity = "0.5";
+let debounceTimer;
 
-    fetch(`index.php?action=search&keyword=${input.value}`)
-        .then(res => res.text())
-        .then(data => {
-            tableBody.innerHTML = data;
-            tableBody.style.opacity = "1";
-        });
+input.addEventListener("keyup", () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+        tableBody.style.opacity = "0.5";
+
+        fetch(`index.php?action=search&keyword=${encodeURIComponent(input.value)}`)
+            .then(res => res.text())
+            .then(data => {
+                tableBody.innerHTML = data;
+                tableBody.style.opacity = "1";
+            });
+    }, 300);
 });
 </script>
 
